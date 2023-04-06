@@ -25,7 +25,7 @@ npm install
 ##### To Run OpenSearch Functions 
 To Execute the Functions run the following command
 ```
-node app.js createIndex
+npm run createIndex
 ```
 
 This will execute the createIndex() function. In the above command you can replace the function name with other function names to execute them. 

@@ -4,7 +4,11 @@
   "description": "test project to demonstrate the functionality of opensearch ",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "createIndex": "node app.js createIndex",
+    "addDocument": "node app.js addDocument",
+    "searchDocuments": "node app.js searchDocuments",
+    "deleteDocument": "node app.js deleteDocument",
+    "deleteIndex": "node app.js deleteIndex"
   },
   "repository": {
     "type": "git",
