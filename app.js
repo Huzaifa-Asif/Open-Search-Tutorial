@@ -1,5 +1,3 @@
-const dotenv = require('dotenv');
-dotenv.config({ path: '.env' });
 const { Client } = require('@opensearch-project/opensearch');
 
 const client = new Client({
@@ -7,31 +5,48 @@ const client = new Client({
 });
 const index_name = 'books';
 
+// method to create index
 async function createIndex() {
+    console.log("createIndex")
+    const settings = {
+        settings: {
+          index: {
+            number_of_shards: 4,
+            number_of_replicas: 3,
+          },
+        },
+      };
+
     const response = await client.indices.create({
-        index: index_name
+        index: index_name,
+        body: settings,
     });
+
     console.log("createIndex response: ", response);
 }
 
-async function addDocuments() {
+// method to add document in index 
+async function addDocument() {
     const document = {
-        title: 'The Outsider 5',
-        author: 'Stephen King 5',
-        year: '5018 5',
-        genre: 'Crime fiction 5',
+        title: 'The Outsider',
+        author: 'Stephen King',
+        year: '2018',
+        genre: 'Crime fiction',
     };
     const id = '5';
+
     const response = await client.index({
         id: id,
         index: index_name,
         body: document,
         refresh: true,
     });
-    console.log("addDocuments response ", response.body);
+
+    console.log("add document to index response: ", response.body);
 }
 
-async function searchDocuments() {
+// method to search documents
+async function searchDocuments() {    
     var query = {
         query: {
             match: {
@@ -47,22 +62,29 @@ async function searchDocuments() {
         body: query,
     });
 
-    console.log("searchDocuments response: ", response.body.hits);
+    console.log("search documents response: ", response.body.hits);
 }
 
+// method to delete document
 async function deleteDocument() {
     var response = await client.delete({
         index: index_name,
         id: '1',
     });
 
-    console.log("deleteDocument response: ", response.body);
+    console.log("delete Document response: ", response.body);
 }
 
+// methid to delete index
 async function deleteIndex() {
     var response = await client.indices.delete({
         index: index_name,
     });
-
-    console.log("deleteIndex response: ", response.body);
+    console.log("delete Index response: ", response.body);
 }
+
+createIndex();
+addDocument();
+searchDocuments();
+deleteDocument();
+deleteIndex();
