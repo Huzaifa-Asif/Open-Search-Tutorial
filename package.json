@@ -1,0 +1,27 @@
+{
+  "name": "opensearch-nodejs",
+  "version": "1.0.0",
+  "description": "test project to demonstrate the functionality of opensearch ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Huzaifa-Asif/Open-Search-Tutorial.git"
+  },
+  "keywords": [
+    "opensearch",
+    "opensearch dashboard",
+    "nodejs"
+  ],
+  "author": "Huzaifa Bin Asif <huzaifa8580@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Huzaifa-Asif/Open-Search-Tutorial/issues"
+  },
+  "homepage": "https://github.com/Huzaifa-Asif/Open-Search-Tutorial#readme",
+  "dependencies": {
+    "@opensearch-project/opensearch": "^2.2.0"
+  }
+}
