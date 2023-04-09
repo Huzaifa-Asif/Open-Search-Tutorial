@@ -7,7 +7,7 @@ dotenv.config({ path: '.env' });
 const client = new Client({
     node: "https://admin:admin@localhost:9200"
 });
-const index_name = 'book';
+const index_name = 'books';
 
 // route to create index
 app.get('/create-index', async (req, res) => {
