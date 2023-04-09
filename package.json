@@ -4,11 +4,7 @@
   "description": "test project to demonstrate the functionality of opensearch ",
   "main": "app.js",
   "scripts": {
-    "createIndex": "node app.js createIndex",
-    "addDocument": "node app.js addDocument",
-    "searchDocuments": "node app.js searchDocuments",
-    "deleteDocument": "node app.js deleteDocument",
-    "deleteIndex": "node app.js deleteIndex"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +22,8 @@
   },
   "homepage": "https://github.com/Huzaifa-Asif/Open-Search-Tutorial#readme",
   "dependencies": {
-    "@opensearch-project/opensearch": "^2.2.0"
+    "@opensearch-project/opensearch": "^2.2.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
   }
 }
