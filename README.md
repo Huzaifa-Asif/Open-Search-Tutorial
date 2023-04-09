@@ -22,17 +22,14 @@ Run the command to install packages.
 npm install
 ```
 
-##### To Run OpenSearch Functions 
-To Execute the Functions run the following command
+Run the command to start the node project
 ```
-npm run createIndex
+npm run start
 ```
 
-This will execute the createIndex() function. In the above command you can replace the function name with other function names to execute them. 
-
-##### Functions Available. 
-1. createIndex();
-2. addDocument();
-3. searchDocuments();
-4. deleteDocument();
-5. deleteIndex();
+###### To Execute the different Open Search Functions go to the following routes:
+Create Index: http://localhost:3000/create-index
+Add Document: http://localhost:3000/add-document
+Search Documents: http://localhost:3000/search-documents
+Delete Document: http://localhost:3000/delete-document
+Delete Index: http://localhost:3000/delete-index
