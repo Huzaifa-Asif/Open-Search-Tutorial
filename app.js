@@ -55,7 +55,7 @@ app.get('/add-document', async (req, res) => {
 });
 
 // route to search document
-app.get('/search-document', async (req, res) => {
+app.get('/search-documents', async (req, res) => {
     try {
         var query = {
             query: {
